@@ -1,10 +1,11 @@
 # Summary
 
 * [序章](README.md)
-    * [第零章 - 安装](py/Install.md)
-        * [Odoo11安装](py/Odoo11-win10-local-install].md)
-        * [Odoo11theme](py/Odoo11-theme].md)
-        * [Odoo12安装补充](py/Od12-win-install-others.md)
+    * [第零章 - 安装](py/01Install.md)
+        * [Odoo11安装](py/01Install/Odoo11-win10-local-install].md)
+        * [Odoo11theme](py/01Install/Odoo11-theme].md)
+        * [Odoo12安装补充](py/01Install/Od12-win-install-others.md)
+        * [Odoo安装叮嘱](py/01Install/Abstract.md)
     * [第一章 - 底层](py/README.md)
         * [创建model](py/part001.md)
         * [字段](py/fields.md)

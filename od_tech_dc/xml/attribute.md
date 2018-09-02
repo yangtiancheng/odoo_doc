@@ -93,10 +93,19 @@
     -
 
 ## Datas文件
->noupdate
+>noupdate - forcecreate
 
 ```text
-noupdate是加载在data标签块上的属性，如果noupdate="1",则对应data块中的record记录不会再被加载，或者说是不会被初始化值。
-当然，如果data块上的noupdate="1"，在record块上还有一个forcecreate的属性，可以用来在data块是noupdate情况下，升级模块中如果
-当前record记录没有被创建时，创建记录。
+noupdate - 属于data的标签属性
+forcecreate - 属于record的标签属性
+
+作用：
+    noupdate主要用于data块里的record记录初始化，这些记录都会有一个ExtendID，也就是record上所谓的id,在ir_module_data上唯一。
+    noupdate的主要功能是初始化一遍数据，如果之后对XML数据定义修改了，再升级，这些数值是不会变化的，依旧保持第一次上来的样子。
+    但是如果你在界面删除了初始化的数据，那么下次升级模块，这些数据就会以修改后的XML数据为基础创建。
+    
+    如果只想数据第一次初始化进来，以后不改变，并且就算被删掉后，希望升级后也不要出现，那么就给对应的record记录上，
+    写forcecreate='false',这样就能保证模块安装初始化上来的数据，不会被任何情况修改更新，删除后不再创建。
+    
+    forcecreate必须绑定在noupdate中才生效,noupdate保持已有数据不更新，forcecreate保证数据删除，升级不创建。
 ```
